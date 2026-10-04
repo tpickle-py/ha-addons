@@ -11,6 +11,7 @@ arch:
 
 startup: application
 boot: auto
+init: false
 
 # Ingress (editor UI behind HA authentication)
 ingress: true
