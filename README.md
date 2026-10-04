@@ -41,7 +41,7 @@ Click the button below to automatically open your Home Assistant instance and ad
 ![Supports aarch64 Architecture][security_hawk-aarch64-shield]
 ![Supports amd64 Architecture][security_hawk-amd64-shield]
 
-Interactive multi-floor plan viewer and security monitoring hub for Home Assistant. Features live entity state, low-latency camera streaming, motion traversal trails, building roll-ups, alert rules, and direct full-screen kiosk mode for wall displays and TVs.
+Interactive floor plan viewer with live sensor states, video streaming, and kiosk mode
 
 [:books: Security Hawk Add-on Documentation][addon-doc-security_hawk]
 
@@ -68,8 +68,8 @@ Releases follow [Semantic Versioning][semver] (`MAJOR.MINOR.PATCH`):
 
 ## Support & Feedback
 
-- For issues and feature requests regarding the **Security Hawk Add-on**, open an issue on the [Security Hawk repository][security-hawk-issues].
-- For issues regarding this **Add-on repository catalog** or packaging, open an issue in this repository.
+- For issues and feature requests regarding the **Security Hawk Add-on**, [open an issue on GitHub][security_hawk-issues].
+- For issues regarding this **Add-on repository catalog** or packaging, [open an issue here][catalog-issues].
 
 ---
 
@@ -82,10 +82,11 @@ MIT License &copy; 2026 Travis Pickle. See [LICENSE.md](LICENSE.md) for details.
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [license-shield]: https://img.shields.io/github/license/tpickle-py/ha-addons.svg
+[catalog-issues]: https://github.com/tpickle-py/ha-addons/issues
+[semver]: https://semver.org/
 [addon-security_hawk]: security_hawk/
 [addon-doc-security_hawk]: security_hawk/DOCS.md
 [security_hawk-issues]: https://github.com/tpickle-py/security-hawk/issues
-[security_hawk-version-shield]: https://img.shields.io/badge/version-v0.3.4-blue.svg
+[security_hawk-version-shield]: https://img.shields.io/badge/version-v0.3.7-blue.svg
 [security_hawk-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [security_hawk-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[semver]: https://semver.org/
