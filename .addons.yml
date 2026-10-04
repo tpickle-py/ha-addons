@@ -1,0 +1,7 @@
+---
+channel: stable
+addons:
+  security_hawk:
+    repository: tpickle-py/security-hawk
+    target: security_hawk
+    image: ghcr.io/tpickle-py/security-hawk/{arch}
