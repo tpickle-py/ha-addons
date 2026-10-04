@@ -23,6 +23,7 @@ ha-addons/
 │       ├── lint.yaml                # Pre-commit & style linting
 │       └── repository-updater.yaml  # Automated catalog synchronization workflow
 ├── .addons.yml                      # Configuration mapping for repository-updater
+├── .README.j2                       # Jinja2 template rendered by repository-updater into README.md
 ├── repository.yaml                  # HA Catalog metadata (name, url, maintainer)
 ├── README.md                        # Catalog overview and one-click My HA installation
 ├── AGENTS.md                        # This documentation file
@@ -63,6 +64,7 @@ security_hawk:
 2. **Matching Target Path**: The files must exist inside the `target:` subdirectory (`security_hawk/`) of the upstream repository.
 3. **Repository Secrets**: `UPDATER_TOKEN` must be configured with write access to push commits to `ha-addons`.
 4. **GitHub Profile Display Name**: PyGithub requires the committing GitHub user to have a non-empty Profile Name set.
+5. **Automated README & Badge Generation (`.README.j2`)**: `repository-updater` automatically renders `.README.j2` into `README.md` on every update, keeping the add-on table, version badges, and documentation links synchronized with the latest release.
 
 ---
 

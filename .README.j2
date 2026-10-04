@@ -35,16 +35,18 @@ Click the button below to automatically open your Home Assistant instance and ad
 
 ## Add-ons Provided by this Repository
 
-### &#10003; [Security Hawk][addon-security_hawk]
+{% for addon in addons %}
+### &#10003; [{{ addon.name }}][addon-{{ addon.target }}]
 
-![Latest Version][security_hawk-version-shield]
-![Supports aarch64 Architecture][security_hawk-aarch64-shield]
-![Supports amd64 Architecture][security_hawk-amd64-shield]
+![Latest Version][{{ addon.target }}-version-shield]
+![Supports aarch64 Architecture][{{ addon.target }}-aarch64-shield]
+![Supports amd64 Architecture][{{ addon.target }}-amd64-shield]
 
-Interactive multi-floor plan viewer and security monitoring hub for Home Assistant. Features live entity state, low-latency camera streaming, motion traversal trails, building roll-ups, alert rules, and direct full-screen kiosk mode for wall displays and TVs.
+{{ addon.description }}
 
-[:books: Security Hawk Add-on Documentation][addon-doc-security_hawk]
+[:books: {{ addon.name }} Add-on Documentation][addon-doc-{{ addon.target }}]
 
+{% endfor %}
 ---
 
 ## Architecture Support
@@ -68,8 +70,10 @@ Releases follow [Semantic Versioning][semver] (`MAJOR.MINOR.PATCH`):
 
 ## Support & Feedback
 
-- For issues and feature requests regarding the **Security Hawk Add-on**, open an issue on the [Security Hawk repository][security-hawk-issues].
-- For issues regarding this **Add-on repository catalog** or packaging, open an issue in this repository.
+{% for addon in addons %}
+- For issues and feature requests regarding the **{{ addon.name }} Add-on**, [open an issue on GitHub][{{ addon.target }}-issues].
+{% endfor %}
+- For issues regarding this **Add-on repository catalog** or packaging, [open an issue here][catalog-issues].
 
 ---
 
@@ -82,10 +86,18 @@ MIT License &copy; 2026 Travis Pickle. See [LICENSE.md](LICENSE.md) for details.
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
 [license-shield]: https://img.shields.io/github/license/tpickle-py/ha-addons.svg
-[addon-security_hawk]: security_hawk/
-[addon-doc-security_hawk]: security_hawk/DOCS.md
-[security_hawk-issues]: https://github.com/tpickle-py/security-hawk/issues
-[security_hawk-version-shield]: https://img.shields.io/badge/version-v0.3.4-blue.svg
-[security_hawk-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
-[security_hawk-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
+[catalog-issues]: https://github.com/tpickle-py/ha-addons/issues
 [semver]: https://semver.org/
+{% for addon in addons %}
+[addon-{{ addon.target }}]: {{ addon.target }}/
+[addon-doc-{{ addon.target }}]: {{ addon.target }}/DOCS.md
+[{{ addon.target }}-issues]: {{ addon.repo }}/issues
+[{{ addon.target }}-version-shield]: https://img.shields.io/badge/version-{{ addon.version }}-blue.svg
+{% for arch in ['aarch64', 'amd64'] %}
+{% if arch in addon.archs %}
+[{{ addon.target }}-{{ arch }}-shield]: https://img.shields.io/badge/{{ arch }}-yes-green.svg
+{% else %}
+[{{ addon.target }}-{{ arch }}-shield]: https://img.shields.io/badge/{{ arch }}-no-red.svg
+{% endif %}
+{% endfor %}
+{% endfor %}
