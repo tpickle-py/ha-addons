@@ -87,6 +87,6 @@ MIT License &copy; 2026 Travis Pickle. See [LICENSE.md](LICENSE.md) for details.
 [addon-security_hawk]: security_hawk/
 [addon-doc-security_hawk]: security_hawk/DOCS.md
 [security_hawk-issues]: https://github.com/tpickle-py/security-hawk/issues
-[security_hawk-version-shield]: https://img.shields.io/badge/version-v0.3.11-blue.svg
+[security_hawk-version-shield]: https://img.shields.io/badge/version-v0.3.12-blue.svg
 [security_hawk-aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [security_hawk-amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
