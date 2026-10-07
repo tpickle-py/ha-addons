@@ -65,6 +65,7 @@ security_hawk:
 3. **Repository Secrets**: `UPDATER_TOKEN` must be configured with write access to push commits to `ha-addons`.
 4. **GitHub Profile Display Name**: PyGithub requires the committing GitHub user to have a non-empty Profile Name set.
 5. **Automated README & Badge Generation (`.README.j2`)**: `repository-updater` automatically renders `.README.j2` into `README.md` on every update, keeping the add-on table, version badges, and documentation links synchronized with the latest release.
+6. **Automated Add-on Manifest & Changelog Synchronization**: `repository-updater` generates `<addon>/config.yaml` and populates `<addon>/CHANGELOG.md` directly from the published GitHub Release body and upstream `target:` files. Do not manually commit version bumps or changelog edits to `ha-addons` before release, as doing so causes `repository-updater`'s update condition (`current_version != latest_version`) to evaluate to false and skip the update.
 
 ---
 
